@@ -36,4 +36,18 @@ public class CalculatorTest {
         Exception ex = assertThrows(ArithmeticException.class, () -> {myCalc.divide(10,0);});
         assertEquals("Cannot divide by zero", ex.getMessage());
     }
+
+    @Test
+    void testSubtractSuccess()
+    {
+        assertEquals(3, myCalc.subtract(6,3));
+    }
+
+    @Test
+    void testSubtractFailure()
+    {
+        Exception ex = assertThrows(IllegalStateException.class, () ->{myCalc.subtract(3,6);});
+        assertEquals("Negative results are not allowed", ex.getMessage());
+    }
+
 }
