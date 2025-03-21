@@ -16,4 +16,12 @@ public class Calculator {
         }
         return firstNum / secondNum;
     }
+
+    public int subtract(int firstNum, int secondNum)
+    {
+        if (firstNum - secondNum < 0){
+            throw new IllegalStateException("Negative results are not allowed");
+        }
+        return  firstNum - secondNum;
+    }
 }
