@@ -24,4 +24,16 @@ public class CalculatorTest {
         assertEquals("The value was too big", ex.getMessage());
     }
 
+    @Test
+    void testDivideSuccess()
+    {
+        assertEquals(2, myCalc.divide(10,5));
+    }
+
+    @Test
+    void testDivideFailure()
+    {
+        Exception ex = assertThrows(ArithmeticException.class, () -> {myCalc.divide(10,0);});
+        assertEquals("Cannot divide by zero", ex.getMessage());
+    }
 }
