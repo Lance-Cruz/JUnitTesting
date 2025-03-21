@@ -24,4 +24,14 @@ public class Calculator {
         }
         return  firstNum - secondNum;
     }
+
+    public int multiply(int firstNum, int secondNum)
+    {
+        long result = (long) firstNum * secondNum;
+        if (result > Integer.MAX_VALUE)
+        {
+            throw new UnsupportedOperationException("Overflow");
+        }
+        return (int) result;
+    }
 }

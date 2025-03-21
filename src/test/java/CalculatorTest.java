@@ -50,4 +50,17 @@ public class CalculatorTest {
         assertEquals("Negative results are not allowed", ex.getMessage());
     }
 
+    @Test
+    void testMultiplySuccess()
+    {
+        assertEquals(10, myCalc.multiply(5,2));
+    }
+
+    @Test
+    void testMultiplyFailure()
+    {
+        Exception ex = assertThrows(UnsupportedOperationException.class, () ->{myCalc.multiply(Integer.MAX_VALUE, 2);});
+        assertEquals("Overflow", ex.getMessage());
+    }
+
 }
